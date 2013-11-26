@@ -1,4 +1,4 @@
-macro timemodels()
+macro trademodels()
   println("")
   reload(Pkg.dir("TimeModels/run_tests.jl"))
 end

@@ -1,8 +1,8 @@
-using  DataFrames, DataArrays, Datetime, TimeSeries
+using  DataFrames, DataArrays, Datetime, TimeSeries, MarketTechnicals
 
 module TradeModels
 
-using  DataFrames, DataArrays, Datetime, TimeSeries
+using  DataFrames, DataArrays, Datetime, TimeSeries, MarketTechnicals
 
 export Strategy, 
 ## testing
@@ -11,6 +11,9 @@ export Strategy,
 ################## include files #####################
 
 include("strategy.jl")
+include("indicator.jl")
+include("signal.jl")
+include("rule.jl")
 include("testtrademodels.jl")
 
 end  #of module

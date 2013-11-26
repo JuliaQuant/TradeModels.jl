@@ -1,5 +1,5 @@
 using Base.Test
-using TimeModels
+using TradeModels
 
 my_tests = ["test/strategy.jl"]
 
