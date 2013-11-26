@@ -5,6 +5,9 @@ module TradeModels
 using  DataFrames, DataArrays, Datetime, TimeSeries, MarketTechnicals
 
 export Strategy, 
+
+
+
 ## testing
        @trademodels
 

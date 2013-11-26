@@ -1,6 +1,6 @@
 macro trademodels()
   println("")
-  reload(Pkg.dir("TimeModels/run_tests.jl"))
+  reload(Pkg.dir("TradeModels/run_tests.jl"))
 end
 
 ########### time trial wrapper #####################################
