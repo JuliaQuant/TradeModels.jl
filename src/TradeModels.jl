@@ -1,16 +1,16 @@
 using  DataFrames, DataArrays, Datetime, TimeSeries
 
-module TimeModels
+module TradeModels
 
 using  DataFrames, DataArrays, Datetime, TimeSeries
 
 export Strategy, 
 ## testing
-       @timemodels
+       @trademodels
 
 ################## include files #####################
 
 include("strategy.jl")
-include("testtimemodels.jl")
+include("testtrademodels.jl")
 
 end  #of module
