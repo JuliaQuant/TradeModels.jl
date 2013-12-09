@@ -34,7 +34,7 @@ julia> sig1 = Signal(close, sma10, :>)
 
 julia> long1 = Rule(:(sig1? 1: 0))
 
-julia> trendisfriend = Strategy([sma10], [sig1], [long1]
+julia> trendisfriend = Strategy([sma10], [sig1], [long1])
 
 julia> simulate(trendisfriend, trendfollow, myfund)
 
