@@ -1,17 +1,8 @@
-type Strategy
-  indicators::Array{Indicactor}
-  signals::Array{Signals}
-  rules::Array{Rules}
-
-  Strategy(x,y,z) = new(x,y,z)
-
-end
-
-
 function simulate(s::Strategy, df::DataFrame)
   # add indicators to df
 
   for indy in s.indicator
+    # df[string(s.method)] = s.method(df, s.colname, s.params)[s.params:end, :]
     df[string(s.indicator)] = indy.method(df[indy.colname], indy.params)
   end
 

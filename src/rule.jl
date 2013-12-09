@@ -1,0 +1,1 @@
+# methods for Rule type 
