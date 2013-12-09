@@ -22,9 +22,7 @@ julia> using TradeModels
 
 julia> symbols = ["SPY", "QQQ", "IWM"]
 
-julia> stocks = Stock[]
-
-julia> [push!(stocks, Stock(s)) for s in symbols]
+julia> stocks = generatestocks(symbols)
 
 julia> trendfollow = Portfolio(stocks)
 
