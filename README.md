@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JuliaQuant/TradeModels.jl.png)](https://travis-ci.org/JuliaQuant/TradeModels.jl)
+
 TradeModels.jl
 ==============
 
