@@ -2,9 +2,9 @@ using Base.Test
 using TradeModels
 
 my_tests = ["strategy.jl",
-           "indicator.jl",
-           "signal.jl",
-           "rule.jl"]
+            "indicator.jl",
+            "signal.jl",
+            "rule.jl"]
 
 print_with_color(:cyan, "Running tests: ") 
 println("")

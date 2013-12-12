@@ -19,6 +19,6 @@ include("strategy.jl")
 include("indicator.jl")
 include("signal.jl")
 include("rule.jl")
-include("test/testmacro.jl")
+include("../test/testmacro.jl")
 
 end  #of module
