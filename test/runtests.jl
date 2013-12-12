@@ -1,10 +1,10 @@
 using Base.Test
 using TradeModels
 
-my_tests = ["test/strategy.jl",
-           "test/indicator.jl",
-           "test/signal.jl",
-           "test/rule.jl"]
+my_tests = ["strategy.jl",
+           "indicator.jl",
+           "signal.jl",
+           "rule.jl"]
 
 print_with_color(:cyan, "Running tests: ") 
 println("")
