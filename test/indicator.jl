@@ -8,6 +8,6 @@ let
   sma20 = Indicator("Close", sma, 20)
 
   # assertions
-  @test 20 sma20.params
+  @test 20 == sma20.params
                                       
 end
