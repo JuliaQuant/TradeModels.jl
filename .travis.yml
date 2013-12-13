@@ -13,6 +13,6 @@ before_install:
 script:
     - julia -e 'versioninfo(); Pkg.init();'
     - julia -e 'Pkg.add("DataFrames"); Pkg.add("DataArrays"); Pkg.add("Datetime"); Pkg.add("TimeSeries"); '
-    - mkdir -p ~/.julia/TimeModels
-    - cp -R ./* ~/.julia/TimeModels/
+    - mkdir -p ~/.julia/TradeModels
+    - cp -R ./* ~/.julia/TradeModels/
     - julia ./test/runtests.jl
