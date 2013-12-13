@@ -1,9 +1,5 @@
 # define types for the package 
 
-module A
-
-export Indicator, Signal, Rule, Strategy
-
 type Indicator
   colname::String 
   method::Function
@@ -30,5 +26,3 @@ type Strategy{T<:Indicator}
   #Strategy(x,y,z) = new(x,y,z)
   Strategy(x) = new(x)
 end
-
-end #of module
