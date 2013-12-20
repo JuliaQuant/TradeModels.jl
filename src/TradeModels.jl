@@ -8,12 +8,14 @@ export Indicator,
        Signal,
        Rule,
        Strategy,
-
+       equity, 
+       equity!, 
 ## testing
        @trademodels
 
 ################## include files #####################
 
+include("analysis.jl")
 include("trademodel.jl")
 include("strategy.jl")
 include("indicator.jl")
