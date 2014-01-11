@@ -1,18 +1,14 @@
+######## annualized return ###################
+
+# returns a single value in simple terms
+function annualizedreturn{T,V}(sa::Array{SeriesPair{T,V}, 1}, ndays::Int)
+  exp(sum(diff(log(value(sa))))) ^ (252/ndays) - 1 
+end
+
 ######## equity curve ########################
 
-function equity(dv::DataArray)
-  pad([expm1(cumsum(diff(log(dv)))) + 1], 1, 0, 1.0)
+# returns an array that depicts a curve
+function equity{T,V}(sa::Array{SeriesPair{T,V}, 1})
+  expm1(cumsum(diff(log(value(sa))))) + 1
 end
 
-function equity!(df::DataFrame, col::String)
-  new_col = string(string(col), "_equity")
-  within!(df, quote
-          $new_col  = $equity($df[$col])
-          end)
-end
-
-function pad(da::DataArray, top::Int, bottom::Int, padwith) #differs from DataArray version in that da is not AbstractDataVector (should it be?)
-  [unshift!(da, padwith) for i = 1:top]
-  [push!(da, padwith) for i = 1:bottom]
-  return da
-end
