@@ -1,14 +1,13 @@
+## TODO make this method expect log returns and NOT prices
 ######## annualized return ###################
 
 # returns a single value in simple terms
-function annualizedreturn{T,V}(sa::Array{SeriesPair{T,V}, 1}, ndays::Int)
-  exp(sum(diff(log(value(sa))))) ^ (252/ndays) - 1 
+function annualizedreturn{T,V}(sa::Array{SeriesPair{T,V}, 1})
+  exp(sum(diff(log(value(sa))))) ^ (252/size(sa,1)) - 1 
 end
 
-function annualizedreturn{T,V}(sa::Array{SeriesPair{T,V}, 1}; prices=false)
-  prices ?
-  exp(sum(diff(log(value(sa))))) ^ (252/size(sa,1)) - 1 :
-  exp(sum(sa)) - 1
+function annualizedreturn(fa::Array{Float64, 1})
+  exp(sum(diff(log(fa)))) ^ (252/size(fa,1)) - 1 
 end
 
 ######## equity curve ########################
