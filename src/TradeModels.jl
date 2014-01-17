@@ -1,26 +1,17 @@
-using  DataFrames, DataArrays, Datetime, TimeSeries, MarketTechnicals
+using Series, Datetime, MarketTechnicals
 
 module TradeModels
 
-using  DataFrames, DataArrays, Datetime, TimeSeries, MarketTechnicals
+using Series, Datetime, MarketTechnicals
 
-export Indicator,
-       Signal,
-       Rule,
-       Strategy,
-       equity, 
-       equity!, 
-## testing
-       @trademodels
+export tradesignal
 
 ################## include files #####################
 
 include("analysis.jl")
-include("trademodel.jl")
 include("strategy.jl")
 include("indicator.jl")
 include("signal.jl")
 include("rule.jl")
-include("../test/testmacro.jl")
 
 end  #of module
