@@ -1,6 +1,7 @@
 # methods for Signal
 
 # relationship between two SA || one SA and a value
+# returns an array of dates
 
 function tradesignal{T<:Date{ISOCalendar}, V}(sa1::Array{SeriesPair{T,V},1}, sa2::Array{SeriesPair{T,V},1}, op::Function)
   index(istrue(op(sa1, sa2)))
