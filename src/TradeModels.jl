@@ -4,14 +4,16 @@ module TradeModels
 
 using Series, Datetime, MarketTechnicals
 
-export tradesignal
+export tradesignal, 
+       annualizedreturn,
+       equity
 
 ################## include files #####################
 
 include("analysis.jl")
-include("strategy.jl")
 include("indicator.jl")
-include("signal.jl")
 include("rule.jl")
+include("signal.jl")
+include("strategy.jl")
 
 end  #of module

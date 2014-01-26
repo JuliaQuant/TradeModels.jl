@@ -1,12 +1,7 @@
-using Base.Test
-using TradeModels
-
-let
-
-  # global objects for tests
-  spx = readtime(Pkg.dir("TimeSeries/test/data/spx.csv"))
-
-  # assertions
-  @assert 0 == 0 
-                                      
+using FactCheck, MarketData
+   
+fact("signal") do
+  context("foo") do
+    @fact foo(cl) => 1.11
+  end
 end
