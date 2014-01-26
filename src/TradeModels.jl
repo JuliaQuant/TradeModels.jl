@@ -6,7 +6,11 @@ using Series, Datetime, MarketTechnicals
 
 export tradesignal, 
        annualizedreturn,
-       equity
+       equity,
+       previoustradeday,
+       continuereturns,
+       nothinghappenedreturn, 
+       printtoprint
 
 ################## include files #####################
 
@@ -15,5 +19,7 @@ include("indicator.jl")
 include("rule.jl")
 include("signal.jl")
 include("strategy.jl")
+include("tasks.jl")
+include("utilities.jl")
 
 end  #of module

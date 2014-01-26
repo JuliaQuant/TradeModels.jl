@@ -1,6 +1,6 @@
 using FactCheck, MarketData
    
-facts("analysis") do
+facts("tasks") do
 
   context("foo") do
     @fact cl[1].value => 105.22

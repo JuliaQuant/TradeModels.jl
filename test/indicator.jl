@@ -1,7 +1,9 @@
 using FactCheck, MarketData
    
-fact("indicator") do
+facts("indicator") do
+
   context("foo") do
-    @fact foo(cl) => 1.11
+    @fact cl[1].value => 105.22
   end
+
 end
