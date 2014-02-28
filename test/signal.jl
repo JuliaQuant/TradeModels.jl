@@ -3,7 +3,7 @@ using FactCheck, MarketData
 facts("signal") do
 
   context("foo") do
-    @fact cl[1].value => 105.22
+    @fact cl.values[1] => 105.22
   end
 
 end

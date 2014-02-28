@@ -1,9 +1,10 @@
-using FactCheck, MarketData
+using MarketData
    
 facts("analysis") do
 
-  context("foo") do
-    @fact cl[1].value => 105.22
+  context("annualized returns and equity curve") do
+      @fact equity(cl, prices=true)[end] => roughly(1.164702528)
+      @fact annualizedreturn(cl)         => 0.07905094554845449
   end
 
 end
