@@ -1,8 +1,8 @@
-using TimeSeries, Datetime, MarketTechnicals
+using TimeSeries, MarketTechnicals
 
 module TradeModels
 
-using TimeSeries, Datetime, MarketTechnicals
+using TimeSeries, MarketTechnicals
 
 export tradesignal, 
        annualizedreturn,
