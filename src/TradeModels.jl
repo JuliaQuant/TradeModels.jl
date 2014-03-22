@@ -7,6 +7,8 @@ using TimeSeries, MarketTechnicals
 export tradesignal, 
        annualizedreturn,
        equity,
+       nextlogreturn,
+       nlr,
        previoustradeday,
        continuereturns,
        nothinghappenedreturn, 
@@ -20,6 +22,6 @@ include("analysis.jl")
 # include("signal.jl")
 # include("strategy.jl")
 # include("tasks.jl")
-# include("utilities.jl")
+include("utilities.jl")
 
 end  #of module
