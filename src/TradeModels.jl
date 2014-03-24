@@ -4,20 +4,10 @@ module TradeModels
 
 using TimeSeries, MarketTechnicals
 
-export tradesignal, 
-       annualizedreturn,
+export annualizedreturn,
        equity,
        discretesignal,
-#        previoustradeday,
-#        continuereturns,
-#        nothinghappenedreturn, 
-#        printtoprint
-       nextlogreturn,
-       nlr,
-       previoustradeday,
-       continuereturns,
-       nothinghappenedreturn, 
-       printtoprint
+       nextlogreturn, nlr
 
 ################## include files #####################
 
