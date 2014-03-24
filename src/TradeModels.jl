@@ -1,8 +1,8 @@
-using TimeSeries, MarketTechnicals
+using TimeSeries, MarketTechnicals, FinancialBlotter
 
 module TradeModels
 
-using TimeSeries, MarketTechnicals
+using TimeSeries, MarketTechnicals, FinancialBlotter
 
 export annualizedreturn,
        equity,
