@@ -1,6 +1,10 @@
-# methods for Signal
+immutable MarketSignal <: AbstractTimeSeries
+    timestamp::Vector{Date{ISOCalendar}}
+    values::BitVector
+    colnames::Vector{ASCIIString}
+end
 
-# convert bool to int and squish a continuous stream to unique, discrete occurances
+# convert bool to float and squish a continuous stream to unique, discrete occurances
 
 function discretesignal(ba::TimeArray{Bool,1})
     iba = float64(ba.values)
