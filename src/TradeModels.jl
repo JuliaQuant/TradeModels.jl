@@ -1,10 +1,11 @@
-using TimeSeries, MarketTechnicals, FinancialBlotter
+using TimeSeries, Datetime, MarketTechnicals, FinancialBlotter
 
 module TradeModels
 
-using TimeSeries, MarketTechnicals, FinancialBlotter
+using TimeSeries, Datetime, MarketTechnicals, FinancialBlotter
 
-export annualizedreturn,
+export MarketSignal,
+       annualizedreturn,
        equity,
        discretesignal,
        nextlogreturn, nlr

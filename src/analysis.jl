@@ -14,6 +14,6 @@ end
 # returns an array that depicts a curve
 function equity{T}(ta::TimeArray{T,1}; prices=false)
     prices ?
-    expm1(cumsum(diff(log(ta.values)))) + 1 :
-    expm1(cumsum(ta.values))
+    TimeArray(ta.timestamp, [1.0, expm1(cumsum(diff(log(ta.values)))) + 1], ["equity"]) :
+    TimeArray(ta.timestamp, [1.0, expm1(cumsum(ta.values)) + 1], ["equity"])
 end
