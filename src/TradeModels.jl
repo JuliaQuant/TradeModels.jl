@@ -12,10 +12,22 @@ export tradesignal,
        previoustradeday,
        continuereturns,
        nothinghappenedreturn, 
-       printtoprint
+       printtoprint, 
+       # from FinancialBlotter
+       OrderBook, Trade, tradearray,
+       orderbookcolnames, 
+       orderbookbidvalues,
+       orderbookoffervalues,
+       orderbooksellvalues,
+       orderbookcovervalues,
+       orderbookticker,
+       fillorderbook
 
 ################## include files #####################
 
+include("analysis.jl")
+include("orderbook.jl")
+include("trades.jl")
 include("analysis.jl")
 # include("indicator.jl")
 # include("rule.jl")
