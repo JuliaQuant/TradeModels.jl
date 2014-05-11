@@ -10,7 +10,3 @@ Modeling the allocation of resources to markets based on the restraints of objec
 ````julia
 julia> Pkg.clone("https://github.com/JuliaQuant/TradeModels.jl.git")
 ````
-
-## Proposed Scope
-
-This package will work with FinancialBlotter and support path-dependent backtesting.
