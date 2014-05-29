@@ -1,9 +1,12 @@
-using MarketData, TradeModels, Quandl
+using MarketData, TradeModels, Quandl, Distributions
 import Base.show, TimeSeries.findall
+
+tinv(df::Int, pval::Float64) = quantile(TDist(df), pval) # t table
+tinv(df::Int, pval::FloatRange{Float64}) = quantile(TDist(df), pval) # t table
 
 include(Pkg.dir("FinancialSeries/src/dev/byvolume.jl"))
 
-#crude = quandl("CHRIS/CME_CL1", rows=1000)
+crude = quandl("CHRIS/CME_CL1", rows=1000)
 myvol = 825399
 c = byvolume(crude, myvol)
 
@@ -31,21 +34,31 @@ end
 ret = percentchange(cl, method="log")
 ret = flipud(ret.values)
 
-# type AR
-#     target
-#     features   # design matrix
-#     params
-#     errors
-#     se         # standard errors
+# type AR{T<:Float64}
+#     target::Vector{T}
+#     features::Matrix{T}   # design matrix
+#     params::Vector{T}
+#     errors::Vector{T}
+#     se::Vector{T}         # standard errors
 # end
 
-function Base.show(ar::AR)
-#    println(io, @sprintf("%d", 4))
+function Base.show(io::IO, arm::AR)
+    tstats = arm.params ./ arm.se
+    df     = size(arm.features,1) - size(arm.features,2) # rows (or n) - columns (or p+1)
+    pt     = cdf(TDist(df), tstats)
+    println(io, @sprintf("coefficients:     %.4f  %.4f  %.4f", arm.params[1], arm.params[2], arm.params[3]))
+    println(io, @sprintf("standard errors:  %.4f  %.4f  %.4f", arm.se[1], arm.se[2], arm.se[3]))
+    println(io, @sprintf("t values:         %.4f  %.4f  %.4f", tstats[1], tstats[2], tstats[3]))
+    println(io, @sprintf("P(>|t|):          %.4f  %.4f  %.4f", pt[1], pt[2], pt[3]))
+
     println(io, "")
 end
 
 #function ar(v::Vector{Float64}, p::Int)
-function ar(ta::TimeArray{Float64,1}, p::Int)
+#function ar(ta::TimeArray{Float64,1}, p::Int)
+
+p = 10
+ta = c["Settle"]
 
     pc = percentchange(ta, method="log")
     v  = flipud(pc.values)
@@ -55,10 +68,10 @@ function ar(ta::TimeArray{Float64,1}, p::Int)
     end
     y = v[p+1:end]
 
-    sigs = findall(abs(autocor(v)) .> .05) # find rows that pass .05 confidence
-    sig  = sigs[sigs.<11] # don't care about lags more than 10
+    # sigs = findall(abs(StatsBase.autocor(v)) .> .05) # find rows that pass .05 confidence
+    # sig  = sigs[sigs.<11] # don't care about lags more than 10
 
-    #sig = 1:p+1 #canonical method to include all features up to and including the last one that shows serial correlation
+    sig = 1:p+1 #canonical method to include all features up to and including the last one that shows serial correlation
 
     X = Xs[:,sig] # the first column remains 1s, some put this as the last
     # Normal Equations
@@ -72,7 +85,8 @@ function ar(ta::TimeArray{Float64,1}, p::Int)
     ∑       = mse * inv(X'X)
     stderr  = sqrt(diag(∑)) # diag(sqrtm(∑))
 
-    AR(y,X,beta,epsilon,stderr)
-end
+    #AR(y,X,beta,epsilon,stderr)
+    ft = AR(y,X,beta,epsilon,stderr)
+#end
 
 #myfit = ar(c["Settle"],6)
