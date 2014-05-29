@@ -1,11 +1,10 @@
-using TimeSeries, Datetime, MarketTechnicals, FinancialSeries
+using TimeSeries, Datetime, MarketTechnicals, FinancialSeries, StatsBase
 
 module TradeModels
 
-using TimeSeries, Datetime, MarketTechnicals, FinancialSeries
+using TimeSeries, Datetime, MarketTechnicals, FinancialSeries, StatsBase
 
-export acf,
-       MarketSignal, discretesignal
+export MarketSignal, discretesignal
 
 ################## include files #####################
 
