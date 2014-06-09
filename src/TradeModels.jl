@@ -4,12 +4,16 @@ module TradeModels
 
 using TimeSeries, Datetime, MarketTechnicals, FinancialSeries, StatsBase
 
-export MarketSignal, discretesignal
+export AR, arima,
+       findall, tinv,
+       MarketSignal, discretesignal
 
 ################## include files #####################
 
 include("arima.jl")
 include("signal.jl")
+include("utilities.jl")
 include("plot.jl")
+
 
 end  #of module
