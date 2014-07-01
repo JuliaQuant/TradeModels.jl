@@ -1,8 +1,7 @@
-using TimeSeries, Datetime, MarketTechnicals, FinancialSeries, StatsBase
-
 module TradeModels
 
-using TimeSeries, Datetime, MarketTechnicals, FinancialSeries, StatsBase
+using FinancialBlotter, StatsBase, Reexport
+@reexport using FinancialSeries
 
 export AR, arima,
        findall, tinv,

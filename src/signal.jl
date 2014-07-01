@@ -3,7 +3,7 @@
 import Base: show, getindex
 
 immutable MarketSignal <: AbstractTimeSeries
-    timestamp::Vector{Date{ISOCalendar}}
+    timestamp::Vector{Date}
     values::BitArray
     colnames::Vector{ASCIIString}
 end
