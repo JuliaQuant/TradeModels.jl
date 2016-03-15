@@ -1,4 +1,4 @@
 Entropy
 -------
 
-H = - `\sum_{p_i log p_i}`
+H = - \sum{p_i log p_i}
